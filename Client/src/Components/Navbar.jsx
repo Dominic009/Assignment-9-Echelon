@@ -119,8 +119,8 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           {navLinks}
         </div>
-        <div className="justify-end md:scale-100 md:w-[20%]">
-          <div className="">
+        <div className="md:scale-100 flex justify-end gap-5 w-[20%]">
+          <div className="w-[15%]">
             {user ? (
               <div>
                 <Link to="/userprofile">
@@ -128,7 +128,7 @@ const Navbar = () => {
                     <img
                       src={user.photoURL}
                       title={user.displayName}
-                      className="scale-[30%] rounded-full"
+                      className="rounded-full"
                     />
                   ) : (
                     <p className="text-lg font-bold mr-24 w-full border rounded-lg bg-current flex items-center justify-center">
@@ -139,7 +139,7 @@ const Navbar = () => {
               </div>
             ) : ""}
           </div>
-          <div>
+          <div className="flex justify-end">
             {user ? (
               <button
                 onClick={handleLogOut}

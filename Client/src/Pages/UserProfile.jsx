@@ -5,9 +5,8 @@ import { AuthContext } from "../Context/AuthProvider";
 import { Link } from "react-router-dom";
 
 const UserProfile = () => {
-
-    const {user} = useContext(AuthContext)
-
+  const { user } = useContext(AuthContext);
+  console.log(user)
   return (
     <div>
       <Helmet>
@@ -19,11 +18,11 @@ const UserProfile = () => {
       </div>
 
       <div className="flex justify-center mt-12 mb-12 w-[90%] mx-auto">
-        <div className="max-w-md p-8 sm:flex sm:space-x-6 bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800">
-          <div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
+        <div className="flex gap-7 justify-center items-center text-gray-100 dark:text-gray-800 bg-gray-50 w-[40%] py-16">
+          <div className="w-[40%]">
             <img
               src={user?.photoURL || "No photo"}
-              className="object-cover object-center w-full h-full rounded bg-gray-500 dark:bg-gray-500"
+              className="object-cover object-center w-full h-full rounded-full outline-dashed"
             />
           </div>
           <div className="flex flex-col space-y-4">
@@ -64,9 +63,9 @@ const UserProfile = () => {
                 </span>
               </span>
             </div>
-          <Link to='/updateprofile' className="btn">
-            Update Profile
-          </Link>
+            <Link to="/updateprofile" className="btn">
+              Update Profile
+            </Link>
           </div>
         </div>
       </div>
