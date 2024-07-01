@@ -11,6 +11,7 @@ import EstateDetails from "../Pages/EstateDetails";
 import About from "../Pages/About";
 import Contact from "../Pages/Contact";
 import PrivateRoutes from "../Components/Private Routes/PrivateRoutes";
+import CheckOut from "../Pages/Payment Page/CheckOut";
 
 export const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
       {
         path: '/aboutus',
         element: <About></About>
+      },
+      {
+        path: '/checkout',
+        element: <PrivateRoutes><CheckOut/></PrivateRoutes>
       }
     ],
   },
