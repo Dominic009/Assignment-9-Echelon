@@ -1,0 +1,39 @@
+[
+    {
+      "client_name": "Alice Johnson",
+      "posted_days_ago": 3,
+      "description": "I had an amazing experience working with Echelon Realty! Their team helped me find the perfect home within my budget and guided me through every step of the process. I highly recommend their services.",
+      "rating": 5
+    },
+    {
+      "client_name": "David Smith",
+      "posted_days_ago": 7,
+      "description": "Echelon Realty exceeded my expectations in every way. Their professionalism and expertise made selling my property a breeze. I'm grateful for their support and would definitely work with them again.",
+      "rating": 5
+    },
+    {
+      "client_name": "Emily Brown",
+      "posted_days_ago": 12,
+      "description": "I was impressed by the dedication and attention to detail of the team at Echelon Realty. They listened to my needs and found me a beautiful home that ticked all the boxes. Thank you for making the home buying process stress-free!",
+      "rating": 4.5
+    },
+    {
+      "client_name": "Michael Wilson",
+      "posted_days_ago": 18,
+      "description": "Working with Echelon Realty was a pleasure from start to finish. Their agents were knowledgeable, responsive, and always had my best interests at heart. I couldn't be happier with the outcome.",
+      "rating": 4.5
+    },
+    {
+      "client_name": "Sarah Martinez",
+      "posted_days_ago": 22,
+      "description": "I'm so grateful to the team at Echelon Realty for helping me find my dream home. Their expertise and support made the entire process smooth and seamless. I would highly recommend them to anyone in need of real estate services.",
+      "rating": 5
+    },
+    {
+      "client_name": "John Thompson",
+      "posted_days_ago": 27,
+      "description": "Echelon Realty went above and beyond to help me find the perfect investment property. Their market knowledge and negotiation skills were instrumental in securing a great deal. I'm thrilled with the results!",
+      "rating": 4.5
+    }
+  ]
+  

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Penthouse",
+    "description": "Luxurious penthouses offering panoramic city views and top-notch amenities.",
+    "image": "https://www.paranych.com/uploads/benefits-penthouse-living-main-image.png",
+    "locations": ["Manhattan, New York", "Dubai, UAE", "London, UK"]
+  },
+  {
+    "name": "Beachfront properties",
+    "description": "Exclusive properties located on pristine beaches, offering unparalleled ocean views and beach access.",
+    "image": "https://static-christiesrealestate-cms-production.gtsstatic.net/resources/v_4_19_0_456/siteresources/my%20folder/responsive/lifestyles/waterfront/locations/floridapanhandlehomewaterfront.jpg",
+    "locations": ["Malibu, California", "Fiji Islands", "Phuket, Thailand"]
+  },
+  {
+    "name": "Resorts",
+    "description": "Luxury resorts nestled in tropical paradises, offering world-class amenities and personalized service.",
+    "image": "https://media.cntraveller.com/photos/611be788d5b6f5a4a3deec1b/1:1/w_430,h_430,c_limit/1_royal_davui_cnt_27jul11_p.jpg",
+    "locations": ["St. Barts", "Bora Bora", "Maldives"]
+  },
+  {
+    "name": "Private islands",
+    "description": "Exclusive private islands offering unparalleled privacy and luxury accommodations.",
+    "image": "https://i.insider.com/5958b2c77ba1360b7d628f8c?width=800&format=jpeg&auto=webp",
+    "locations": ["Fiji Islands", "Maldives", "Caribbean"]
+  },
+  {
+    "name": "Villas",
+    "description": "Stunning villas with spacious living areas, private pools, and breathtaking views.",
+    "image": "https://the-view-luxury-villas.com/wp-content/uploads/2019/11/Luxury-Villas-Lefkada-Infinity-Pool-und-Garten6.jpg",
+    "locations": [
+      "Beverly Hills, California",
+      "Tuscany, Italy",
+      "Bali, Indonesia"
+    ]
+  },
+  {
+    "name": "Mansions",
+    "description": "Exquisite mansions boasting luxurious interiors, expansive grounds, and state-of-the-art amenities.",
+    "image": "https://media.istockphoto.com/id/157193895/photo/beautiful-swimming-pool-at-an-estate-home.jpg?s=612x612&w=0&k=20&c=CdpPhGnQOxxLJnt4Q-KevD05kM3G-giGD5iLLatEQDM=",
+    "locations": [
+      "Beverly Hills, California",
+      "Hamptons, New York",
+      "London, UK"
+    ]
+  },
+  {
+    "name": "Chalets",
+    "description": "Cozy chalets nestled in picturesque mountain settings, offering stunning views and access to outdoor activities.",
+    "image": "https://www.falstaff-travel.com/wp-content/uploads/2021/12/AdobeStock_178114793.jpg",
+    "locations": ["Zermatt, Switzerland", "Aspen, Colorado", "Whistler, Canada"]
+  },
+  {
+    "name": "Castles",
+    "description": "Historic castles steeped in grandeur and elegance, featuring opulent interiors and extensive grounds.",
+    "image": "https://hips.hearstapps.com/hmg-prod/images/bojnice-castle-1603142898.jpg?crop=0.668xw:1.00xh;0.116xw,0&resize=980:*",
+    "locations": [
+      "Loire Valley, France",
+      "Edinburgh, Scotland",
+      "Bavaria, Germany"
+    ]
+  },
+  {
+    "name": "Estates",
+    "description": "Sprawling estates offering a blend of luxury living and natural beauty, with manicured gardens and luxurious amenities.",
+    "image": "https://www.fratantoniluxuryestates.com/wp-content/uploads/arizona-luxury-home-builder.jpg",
+    "locations": [
+      "Santorini, Greece",
+      "Napa Valley, California",
+      "Cotswolds, England"
+    ]
+  }
+]
