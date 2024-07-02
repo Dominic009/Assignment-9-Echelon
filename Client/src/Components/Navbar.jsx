@@ -116,9 +116,11 @@ const Navbar = () => {
             />
           </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
+
+        <div className="md:w-[50%] lg:w-[80%] mx-auto flex justify-center">
           {navLinks}
         </div>
+
         <div className="md:scale-100 flex justify-end gap-5 w-[20%]">
           <div className="w-[15%]">
             {user ? (

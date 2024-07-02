@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Navbar from "../../Components/Navbar";
+import '../../index.css'
 
 const CheckOut = () => {
   return (
@@ -11,7 +12,7 @@ const CheckOut = () => {
         <Navbar></Navbar>
       </div>
 
-      <div className="font-sans bg-white p-4">
+      <div className="font-sans bg-white p-4 py-24">
       <div className="max-w-4xl mx-auto">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-gray-800 inline-block border-b-[3px] border-gray-800 pb-1">Checkout</h2>
@@ -51,7 +52,7 @@ const CheckOut = () => {
           <div className="grid md:grid-cols-3 gap-4 mt-12">
             <div>
               <h3 className="text-3xl font-bold text-gray-300">02</h3>
-              <h3 className="text-xl font-bold text-gray-800 mt-1">Shopping Address</h3>
+              <h3 className="text-xl font-bold text-gray-800 mt-1">Payment Address</h3>
             </div>
 
             <div className="md:col-span-2">
@@ -122,9 +123,9 @@ const CheckOut = () => {
 
           <div className="flex flex-wrap justify-end gap-4 mt-12">
             <button type="button"
-              className="px-6 py-3 text-sm font-semibold tracking-wide bg-transparent border-2 text-gray-800 rounded-md hover:bg-gray-100">Pay later</button>
+              className="px-9 py-2 text-sm font-semibold tracking-wide bg-transparent border-2 border-[#14213D] text-gray-800 rounded-md hover:bg-gray-100 transition duration-300 ease-in-out">Pay later</button>
             <button type="button"
-              className="px-6 py-3 text-sm font-semibold tracking-wide bg-blue-600 text-white rounded-md hover:bg-blue-700">Pay now</button>
+              className="px-9 py-2 text-sm font-semibold tracking-wide bg-[#14213D] text-[#FCA311] rounded-md hover:bg-white hover:border-2 hover:border-[#14213D] transition duration-300 ease-in-out">Pay now</button>
           </div>
         </div>
       </div>
