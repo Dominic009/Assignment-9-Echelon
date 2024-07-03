@@ -131,6 +131,7 @@ const CheckOut = () => {
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="flex items-center">
                     <input
+                      readOnly
                       type="radio"
                       className="w-5 h-5 cursor-pointer"
                       id="card"
