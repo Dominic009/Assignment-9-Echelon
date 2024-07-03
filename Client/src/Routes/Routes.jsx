@@ -26,12 +26,12 @@ export const router = createBrowserRouter([
       {
         path: "/home",
         element: <Home></Home>,
-        loader: async () => fetch('https://dominic009.github.io/Estate-API-Data/datas.json'),
+        loader: async () => fetch('http://localhost:8000/datas'),
       },
       {
         path: '/home/:id',
         element: <PrivateRoutes><EstateDetails></EstateDetails></PrivateRoutes>,
-        loader: async () => fetch('https://dominic009.github.io/Estate-API-Data/datas.json')
+        loader: async () => fetch('http://localhost:8000/datas')
       },
       {
         path: "/updateProfile",

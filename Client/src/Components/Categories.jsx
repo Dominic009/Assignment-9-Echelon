@@ -2,17 +2,20 @@ import { useEffect, useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 
 const Categories = () => {
-  const [catergory, setCategory] = useState([]);
+  const [category, setCategory] = useState([]);
 
   useEffect(() => {
-    fetch("categories.json")
+    fetch("http://localhost:8000/categories")
       .then((res) => res.json())
       .then((data) => setCategory(data));
   }, []);
 
+  console.log(category)
+
+
   return (
     <div className="grid md:grid-cols-3 mt-7 mb-12 place-items-center gap-5 p-5 w-full">
-      {catergory.map((cat, idx) => (
+      {category.map((cat, idx) => (
         <div
           key={idx}
           className="bg-[#14213D] h-[300px] rounded-xl bg-cover"
