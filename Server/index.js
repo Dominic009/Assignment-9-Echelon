@@ -11,7 +11,7 @@ app.use(cors());
 
 // MongoDB Connection
 const { MongoClient, ServerApiVersion } = require("mongodb");
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@domserver.es4znv5.mongodb.net/?retryWrites=truew=majorityappName=DomServer`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@domserver.es4znv5.mongodb.net/?retryWrites=true&w=majorityappName=DomServer`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -27,9 +27,7 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     // await client.connect();
 
-    const categoriesCollection = client
-      .db("EchelonDB")
-      .collection("categories");
+    const categoriesCollection = client.db("EchelonDB").collection("categories");
     const reviewsCollection = client.db("EchelonDB").collection("reviews");
     const datasCollection = client.db("EchelonDB").collection("datas");
 
@@ -48,7 +46,6 @@ async function run() {
       const results = await reviewsCollection.find().toArray();
       res.send(results);
     });
-
 
     //Post requests
     app.post("/payment", async (req, res) => {
@@ -101,27 +98,9 @@ async function run() {
       res.send("Got it");
     });
 
-    app.post('./sucess-payment', async(req, res) => {
-
-    })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    app.post("./sucess-payment", async (req, res) => {
+      res.send('Payment is succesfull')
+    });
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
