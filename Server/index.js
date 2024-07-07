@@ -1,8 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
-const bodyParser = require('body-parser');
-const axios  = require("axios");
+const bodyParser = require("body-parser");
+const axios = require("axios");
 
 const app = express();
 
@@ -32,9 +32,12 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     // await client.connect();
 
-    const categoriesCollection = client.db("EchelonDB").collection("categories");
+    const categoriesCollection = client
+      .db("EchelonDB")
+      .collection("categories");
     const reviewsCollection = client.db("EchelonDB").collection("reviews");
     const datasCollection = client.db("EchelonDB").collection("datas");
+    const paymentsCollection = client.db("EchelonDB").collection("payments");
 
     // Get requests
     app.get("/categories", async (req, res) => {
@@ -52,9 +55,15 @@ async function run() {
       res.send(results);
     });
 
+    app.get("/payments", async (req, res) => {
+      const result = await paymentsCollection.find().toArray();
+      res.send(result);
+    });
+
     //Post requests
     app.post("/payment", async (req, res) => {
       const paymentInfo = req.body;
+      console.log(paymentInfo.cus_email.email);
 
       //generating random id for each transaction
       const characters =
@@ -76,8 +85,8 @@ async function run() {
         success_url: "http://localhost:8000/success-payment",
         fail_url: "http://yoursite.com/fail.php",
         cancel_url: "http://yoursite.com/cancel.php",
-        cus_name: "Customer Name",
-        cus_email: "cust@yahoo.com",
+        cus_name: paymentInfo.cus_name.displayName,
+        cus_email: paymentInfo.cus_email.email,
         cus_add1: "Dhaka",
         cus_add2: "Dhaka",
         cus_city: "Dhaka",
@@ -93,10 +102,10 @@ async function run() {
         ship_state: "Dhaka",
         ship_postcode: "1000",
         ship_country: "Bangladesh",
-        shipping_method: 'Air',
+        shipping_method: "Air",
         product_name: "Lenovo",
         product_category: "Electronic ",
-        product_profile:"general",
+        product_profile: "general",
         multi_card_name: "mastercard,visacard,amexcard",
         value_a: "ref001_A",
         value_b: "ref002_B",
@@ -104,23 +113,40 @@ async function run() {
         value_d: "ref004_D",
       };
 
-        const response = await axios({
+      const response = await axios({
         method: "POST",
         url: "https://sandbox.sslcommerz.com/gwprocess/v4/api.php",
         data: paymentDetails,
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        }
-      })
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      });
 
-      res.send({
-        paymentURL: response.data.GatewayPageURL
-      })
+      // save data in mongoDB
+      const paymentReq = {
+        cus_name: paymentInfo.cus_name.displayName,
+        cus_email: paymentInfo.cus_email.email,
+        tran_id: traxId,
+        total_amount: paymentInfo.amount,
+      };
+
+      const saveData = await paymentsCollection.insertOne(paymentReq);
+
+      // if(saveData){
+      //   res.send(saveData, {
+      //     details: response.data,
+      //     paymentURL: response.data.GatewayPageURL
+      //   });
+      // }
+      res.send(saveData, {
+        details: response.data,
+        paymentURL: response.data.GatewayPageURL,
+      });
     });
 
-    app.post("./sucess-payment", async (req, res) => {
+    app.post("/sucess-payment", async (req, res) => {
       const successData = req.body;
-      res.send('Payment is succesfull', successData)
+      res.send("Payment is succesfull", successData);
     });
 
     // Send a ping to confirm a successful connection
