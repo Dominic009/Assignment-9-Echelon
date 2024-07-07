@@ -2,15 +2,32 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "../../Components/Navbar";
 import "../../index.css";
 import axios from "axios";
+import { useContext } from "react";
+import { AuthContext } from "../../Context/AuthProvider";
 
 const CheckOut = () => {
+
+  const { user } = useContext(AuthContext);
+  const { displayName, email } = user;
+
+
   const handlePayment = () => {
     axios
       .post("http://localhost:8000/payment", {
+        cus_name: {displayName},
+        cus_email: {email},
         amount: 1000,
         currency: "USD",
       })
-      .then((res) => console.log(res));
+      .then((res) => {
+        console.log(res);
+
+        const redirectURL = res.data.paymentURL;
+
+        if(redirectURL){
+          window.location.replace(redirectURL)
+        }
+      });
   };
 
   return (
@@ -45,28 +62,28 @@ const CheckOut = () => {
                     <div>
                       <input
                         type="text"
-                        placeholder="First name"
+                        placeholder={user?.displayName}
                         className="px-4 py-3 bg-white text-gray-800 w-full text-sm border-2 rounded-md focus:border-blue-500 outline-none"
                       />
                     </div>
                     <div>
                       <input
                         type="text"
-                        placeholder="Last name"
+                        placeholder={ user?.lastName || "N/A" }
                         className="px-4 py-3 bg-white text-gray-800 w-full text-sm border-2 rounded-md focus:border-blue-500 outline-none"
                       />
                     </div>
                     <div>
                       <input
                         type="email"
-                        placeholder="Email address"
+                        placeholder={user?.email}
                         className="px-4 py-3 bg-white text-gray-800 w-full text-sm border-2 rounded-md focus:border-blue-500 outline-none"
                       />
                     </div>
                     <div>
                       <input
                         type="number"
-                        placeholder="Phone number"
+                        placeholder={ user?.phoneNumber || "N/A" }
                         className="px-4 py-3 bg-white text-gray-800 w-full text-sm border-2 rounded-md focus:border-blue-500 outline-none"
                       />
                     </div>
